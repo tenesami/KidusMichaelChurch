@@ -22,33 +22,20 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-            <nav class="navbar navbar-light">
-                <a class="navbar-brand" href="#">
-                    <img src="src/thumbs/IMG_12_logo.jpg" class="rounded-circle" width="24%" height="auto" alt="" loading="lazy">
-                </a>
-            </nav>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-white shadow-sm">
+            <a class="navbar-brand" href="#">
+                <img src="src/thumbs/IMG_12_logo.jpg" class="rounded-circle" height="40" width="40" alt="Church logo" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+            <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item btn btn-outline-info mr-3">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item btn btn-outline-info mr-3">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item btn btn-outline-info mr-3">
-                        <a class="nav-link" href="quotes.html">Quotes</a>
-                    </li>
-                    <li class="nav-item btn btn-outline-info mr-3">
-                        <a class="nav-link" href="products.html">Products</a>
-                    </li>
-                    <li class="nav-item btn btn-outline-info mr-3">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link nav-pill" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-pill" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link nav-pill" href="quotes.html">Quotes</a></li>
+                    <li class="nav-item"><a class="nav-link nav-pill" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link nav-pill" href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
         </nav>
@@ -114,33 +101,45 @@
         <div class="card-deck my-5">
 
 
-            <div class="card shadow" style="width: 18rem;">
-                <img src="src/images/IMG_17.JPG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">facebook</h5>
-                    <p class="card-text">Some quick example text to build on the card title.</p>
-                    <a href="https://www.facebook.com/110150177150469" target="_blank" class="btn btn-outline-info stretched-link">Go facebook</a>
+            <div class="row my-5">
+                <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="src/images/IMG_17.JPG" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Facebook</h5>
+                            <p class="card-text">…</p>
+                            <a href="https://www.facebook.com/110150177150469" target="_blank" class="btn btn-outline-info mt-auto stretched-link">Visit Facebook</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="row my-5">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="src/images/IMG_10.JPG" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Youtube</h5>
+                                <p class="card-text">... </p>
+                                <a href="https://youtu.be/sb1Rrmcl8r8" target="_blank" class="btn btn-outline-info mt-auto stretched-link">Go to Youtube</a>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="card shadow" style="width: 18rem;">
-                <img src="src/images/IMG_10.JPG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Youtube</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make </p>
-                    <a href="https://youtu.be/sb1Rrmcl8r8" target="_blank" class="btn btn-outline-info stretched-link">Go to Youtube</a>
-                </div>
-            </div>
-
-            <div class="card shadow" style="width: 18rem;">
-                <img src="src/images/IMG_2.JPG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of content.</p>
-                    <a href="#" class="btn btn-outline-info stretched-link">Go Top page</a>
+                    <div class="row my-5">
+                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="src/images/IMG_2.JPG" class="card-img-top" alt="...">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Doneate</h5>
+                                    <p class="card-text">... </p>
+                                    <a href="#" class="btn btn-outline-info stretched-link">Go Top page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
     <footer class="fixed-bottom">
