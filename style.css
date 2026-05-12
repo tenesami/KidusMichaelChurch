@@ -1,82 +1,299 @@
-     html {
-         height: 100%;
-     }
-     
-     body {
-         font-family: 'Open Sans', sans-serif;
-         font-weight: 300;
-         background-image: linear-gradient(to bottom right, #b0e7e9, rgb(247, 247, 243));
-         padding-bottom: 3rem;
-     }
-     
-     h1 {
-         font-family: 'Abril Fatface', Open Sans, sans-serif, cursive;
-         text-align: center;
-     }
-     
-     .jumbotron {
-         background-color: rgba(250, 250, 250, 0);
-     }
-     
-     .drop-shadow {
-         text-shadow: 1px 1px 1px rgba(0, 0, 0);
-     }
-     
-     .lead {
-         color: rgb(25, 27, 18);
-         font-size: 2rem;
-     }
-     
-     #qut_container {
-         font-size: 1.5rem;
-         margin-bottom: 1rem;
-     }
-     
-     button #display {
-         text-align: center;
-         font-size: 2rem;
-     }
-     
-     #pro_img {
-         background-color: #fff;
-         background-image: url(src/images/IMG_6.JPG);
-         /* background-image: url(src/images/IMG_12_copy.jpg); */
-         /* background-image: url(src/images/IMG_13.JPG); */
-         background-size: cover;
-         background-repeat: no-repeat;
-     }
-     
-     #display_pro {
-         background-color: rgba(171, 244, 245, 0.5);
-         margin-right: auto;
-         width: auto;
-     }
-     
-     #quote_display {
-         margin-right: auto;
-         width: auto;
-     }
-     
-     #list li {
-         display: inline;
-     }
-     
-     #thumbs {
-         height: 5rem;
-         width: auto;
-         padding: .3rem;
-     }
-     
-     #box {
-         display: block;
-         margin-left: auto;
-         margin-right: auto;
-         height: 40rem;
-         width: auto;
-     }
-     
-     footer {
-         text-align: center;
-         background-color: rgb(139, 225, 240);
-         color: #fffb00;
-     }
+/* ---------- Color & material tokens ---------- */
+
+:root {
+    --eo-parchment: #f5ecd2;
+    --eo-parchment-light: #fbf4e1;
+    --eo-gold: #b88a2a;
+    --eo-gold-bright: #e3bf57;
+    --eo-gold-deep: #8a651b;
+    --eo-crimson: #8b1a1a;
+    --eo-crimson-deep: #5e0e0e;
+    --eo-forest: #1f5230;
+    --eo-ink: #2a2018;
+    --eo-band: linear-gradient(90deg, var(--eo-gold-deep) 0%, var(--eo-gold-bright) 50%, var(--eo-gold-deep) 100%);
+}
+
+
+/* ---------- Body: parchment + cross pattern ---------- */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'EB Garamond', 'Georgia', 'Roboto', serif;
+    color: var(--eo-ink);
+    background-color: var(--eo-parchment);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'><g fill='none' stroke='%239c6a1f' stroke-width='0.9' opacity='0.18'><path d='M45 12 L78 45 L45 78 L12 45 Z'/><path d='M45 24 L66 45 L45 66 L24 45 Z'/><path d='M45 24 L45 66 M24 45 L66 45'/><path d='M42 12 L48 12 M45 9 L45 15'/><path d='M42 78 L48 78 M45 75 L45 81'/><path d='M9 45 L15 45 M12 42 L12 48'/><path d='M75 45 L81 45 M78 42 L78 48'/><circle cx='45' cy='45' r='2.2' fill='%239c6a1f'/></g></svg>"), radial-gradient(ellipse at top, rgba(255, 250, 235, 0.6) 0%, rgba(120, 80, 30, 0.06) 80%);
+    background-attachment: fixed, fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main,
+.container {
+    flex: 1 0 auto;
+}
+
+
+/* ---------- Typography ---------- */
+
+h1,
+h2,
+h3 {
+    font-family: 'EB Garamond', 'Georgia', serif;
+    color: var(--eo-crimson-deep);
+    letter-spacing: 0.01em;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(1.6rem, 3.5vw + 0.5rem, 2.6rem);
+    line-height: 1.25;
+    /* Subtle gold underline on big headings */
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--eo-gold);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: clamp(1.25rem, 2vw + 0.4rem, 1.75rem);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+
+/* Cross bullet next to h2 */
+
+h2::before {
+    content: "✠";
+    color: var(--eo-gold);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.lead {
+    font-style: italic;
+    color: var(--eo-crimson);
+    font-size: clamp(1.05rem, 1.4vw + 0.5rem, 1.4rem);
+}
+
+.drop-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ---------- Illuminated panel (reusable) ---------- */
+
+.illum-panel {
+    background: var(--eo-parchment-light);
+    border: 1.5px solid var(--eo-gold);
+    border-radius: 6px;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(94, 14, 14, 0.06);
+}
+
+
+/* Top & bottom gold bands */
+
+.illum-panel::before,
+.illum-panel::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--eo-band);
+}
+
+.illum-panel::before {
+    top: 0;
+}
+
+.illum-panel::after {
+    bottom: 0;
+}
+
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+    background: var(--eo-parchment-light) !important;
+    border-bottom: 2px solid var(--eo-gold);
+    box-shadow: 0 1px 0 var(--eo-gold-bright), 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand img {
+    border: 2px solid var(--eo-gold);
+    box-shadow: 0 0 0 1px var(--eo-crimson);
+}
+
+.nav-link {
+    color: var(--eo-crimson-deep) !important;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    border-radius: 4px;
+    padding: 0.4rem 0.9rem !important;
+    margin: 0 0.15rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background: var(--eo-crimson);
+    color: var(--eo-gold-bright) !important;
+}
+
+
+/* ---------- Jumbotron ---------- */
+
+.jumbotron {
+    background: transparent;
+    padding: 2rem 1rem 1rem;
+}
+
+
+/* ---------- Section cards (admin message, etc.) ---------- */
+
+.message-card {
+    background: var(--eo-parchment-light);
+    border: 1.5px solid var(--eo-gold);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.message-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 220px;
+}
+
+
+/* ---------- Carousel ---------- */
+
+.carousel {
+    border: 1.5px solid var(--eo-gold);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(94, 14, 14, 0.1);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: clamp(220px, 45vw, 480px);
+    object-fit: cover;
+}
+
+
+/* ---------- Cards ---------- */
+
+.card {
+    background: var(--eo-parchment-light);
+    border: 1.5px solid var(--eo-gold) !important;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--eo-band);
+    z-index: 2;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(94, 14, 14, 0.15);
+}
+
+.card-img-top {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.card-title {
+    color: var(--eo-crimson-deep);
+    font-family: 'EB Garamond', 'Georgia', serif;
+    font-weight: 500;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.btn-outline-info {
+    color: var(--eo-crimson) !important;
+    border: 1.5px solid var(--eo-crimson) !important;
+    background: transparent !important;
+    font-family: 'EB Garamond', 'Georgia', serif;
+    letter-spacing: 0.05em;
+    border-radius: 2px !important;
+    transition: all 0.2s;
+}
+
+.btn-outline-info:hover,
+.btn-outline-info:focus {
+    background: var(--eo-crimson) !important;
+    color: var(--eo-gold-bright) !important;
+    border-color: var(--eo-crimson) !important;
+    box-shadow: 0 0 0 2px var(--eo-gold);
+}
+
+
+/* ---------- Section dividers (use anywhere) ---------- */
+
+.divider-cross {
+    text-align: center;
+    margin: 2.5rem 0;
+    color: var(--eo-gold);
+    font-size: 1.25rem;
+    letter-spacing: 1rem;
+}
+
+.divider-cross::before {
+    content: "✦ ✠ ✦";
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: var(--eo-crimson-deep);
+    color: var(--eo-gold-bright);
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 2rem;
+    border-top: 4px solid;
+    border-image: var(--eo-band) 1;
+}
+
+footer a {
+    color: var(--eo-gold-bright);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--eo-parchment-light);
+}
+
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .nav-link,
+    .btn-outline-info {
+        transition: none;
+    }
+}
