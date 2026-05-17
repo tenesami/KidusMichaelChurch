@@ -287,6 +287,14 @@ footer a:hover {
     color: var(--eo-parchment-light);
 }
 
+#thumbs {
+    height: 45vh;
+}
+
+#thumbs {
+    height: 22vh;
+}
+
 
 /* ---------- Reduced motion ---------- */
 
@@ -295,5 +303,14 @@ footer a:hover {
     .nav-link,
     .btn-outline-info {
         transition: none;
+    }
+}
+
+@media (max-width: 850px) {
+    #thumbs {
+        height: 320px;
+    }
+    #thumbs {
+        height: 220px;
     }
 }

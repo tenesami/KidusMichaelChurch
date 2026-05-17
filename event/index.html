@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>St. Michael Church — Programs & Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ══ HEADER ══ -->
+        <header>
+            <div class="cross">
+                <svg viewBox="-130 -130 260 260" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Halo rings -->
+    <circle cx="0" cy="0" r="112" stroke="#078930" stroke-width="2.5" opacity="0.4"/>
+    <circle cx="0" cy="0" r="106" stroke="#FCDD09" stroke-width="2"   opacity="0.5"/>
+    <circle cx="0" cy="0" r="100" stroke="#DA121A" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Vertical arm -->
+    <rect x="-10" y="-108" width="20" height="72" rx="2" fill="#078930" stroke="none"/>
+    <rect x="-10" y="-36"  width="20" height="72" rx="2" fill="#FCDD09" stroke="none"/>
+    <rect x="-10" y="36"   width="20" height="72" rx="2" fill="#DA121A" stroke="none"/>
+
+    <!-- Horizontal arm -->
+    <rect x="-108" y="-10" width="72" height="20" rx="2" fill="#078930" stroke="none"/>
+    <rect x="-36"  y="-10" width="72" height="20" rx="2" fill="#FCDD09" stroke="none"/>
+    <rect x="36"   y="-10" width="72" height="20" rx="2" fill="#DA121A" stroke="none"/>
+
+    <!-- Center -->
+    <rect x="-18" y="-18" width="36" height="36" rx="3" fill="#FCDD09" stroke="none"/>
+    <rect x="-10" y="-10" width="20" height="20" rx="2" fill="#DA121A" stroke="none"/>
+
+    <!-- Tips — top (green) -->
+    <polygon points="0,-108 -10,-96 0,-88 10,-96" fill="#078930" stroke="none"/>
+    <circle cx="-16" cy="-100" r="5" fill="#078930" stroke="none"/>
+    <circle cx="16"  cy="-100" r="5" fill="#078930" stroke="none"/>
+    <circle cx="0"   cy="-118" r="6" fill="#078930" stroke="none"/>
+    <circle cx="0"   cy="-118" r="3" fill="#FCDD09" stroke="none"/>
+
+    <!-- Tips — bottom (red) -->
+    <polygon points="0,108 -10,96 0,88 10,96" fill="#DA121A" stroke="none"/>
+    <circle cx="-16" cy="100" r="5" fill="#DA121A" stroke="none"/>
+    <circle cx="16"  cy="100" r="5" fill="#DA121A" stroke="none"/>
+    <circle cx="0"   cy="118" r="6" fill="#DA121A" stroke="none"/>
+    <circle cx="0"   cy="118" r="3" fill="#FCDD09" stroke="none"/>
+
+    <!-- Tips — left (green) -->
+    <polygon points="-108,0 -96,-10 -88,0 -96,10" fill="#078930" stroke="none"/>
+    <circle cx="-100" cy="-16" r="5" fill="#078930" stroke="none"/>
+    <circle cx="-100" cy="16"  r="5" fill="#078930" stroke="none"/>
+    <circle cx="-118" cy="0"   r="6" fill="#078930" stroke="none"/>
+    <circle cx="-118" cy="0"   r="3" fill="#FCDD09" stroke="none"/>
+
+    <!-- Tips — right (red) -->
+    <polygon points="108,0 96,-10 88,0 96,10" fill="#DA121A" stroke="none"/>
+    <circle cx="100" cy="-16" r="5" fill="#DA121A" stroke="none"/>
+    <circle cx="100" cy="16"  r="5" fill="#DA121A" stroke="none"/>
+    <circle cx="118" cy="0"   r="6" fill="#DA121A" stroke="none"/>
+    <circle cx="118" cy="0"   r="3" fill="#FCDD09" stroke="none"/>
+
+    <!-- Corner dots -->
+    <circle cx="-18" cy="-18" r="4" fill="#078930" stroke="none"/>
+    <circle cx="18"  cy="-18" r="4" fill="#DA121A" stroke="none"/>
+    <circle cx="-18" cy="18"  r="4" fill="#DA121A" stroke="none"/>
+    <circle cx="18"  cy="18"  r="4" fill="#078930" stroke="none"/>
+
+  </svg>
+            </div>
+            <p class="tagline">በኢትዮጵያ ኦርቶዶክስ ተዋህዶ</p>
+            <h1><em>የዴንቨር ደብረ ሳህል ቅዱስ ሚካኤል </em> ቤተክርስቲያን</h1>
+            <p class="tagline" style="margin-bottom:16px">የአመታዊ ክብረ በዓላት የአገልግሎት ዝግጅቶች</p>
+            <div class="season-badge" id="seasonBadge">መደበኛ ቀናት</div>
+        </header>
+
+        <!-- ══ DATE BAR ══ -->
+        <div class="date-bar">
+            <div class="today-label" id="todayLabel">Loading…</div>
+            <div class="next-service" id="nextServiceLabel"></div>
+        </div>
+
+        <!-- ══ NAV TABS ══ -->
+        <nav class="nav-tabs" aria-label="Jump to section">
+            <a class="nav-tab active" href="#today">ዛሬ</a>
+            <a class="nav-tab" href="#thisweek">ይህ ሳምንት</a>
+            <a class="nav-tab" href="#seasons">አመታዊ ክብረ በዓላት</a>
+            <a class="nav-tab" href="#events">የሚመጡ በአላት</a>
+        </nav>
+
+        <!-- ══ TODAY'S SERVICES ══ -->
+        <section id="today">
+            <div class="section-label">
+                <span class="icon">☩</span>
+                <h2>የዛሬ አገልግሎት</h2>
+                <div class="rule"></div>
+            </div>
+            <div class="services-grid" id="todayGrid">
+                <!-- Populated by app.js -->
+            </div>
+        </section>
+
+        <!-- ══ THIS WEEK ══ -->
+        <section id="thisweek">
+            <div class="section-label">
+                <span class="icon">☩</span>
+                <h2>በዚህ ሳምንት</h2>
+                <div class="rule"></div>
+            </div>
+            <table class="week-table">
+                <thead>
+                    <tr>
+                        <th>ቀን</th>
+                        <th>የአገልግሎት &amp; ክፍለ ግዜ</th>
+                        <th>ማስታወሻ</th>
+                    </tr>
+                </thead>
+                <tbody id="weekBody">
+                    <!-- Populated by app.js -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ══ LITURGICAL YEAR ══ -->
+        <section id="seasons">
+            <div class="section-label">
+                <span class="icon">☩</span>
+                <h2>የአመታዊ ክብረ በዓላት</h2>
+                <div class="rule"></div>
+            </div>
+            <div class="season-cards">
+                <div class="season-card" style="background: #5B2D82;">
+                    <span class="sc-icon">🕯</span>
+                    <div class="sc-name">ሕዳር ሚካኤል</div>
+                    <div class="sc-dates">ሕዳር 12</div>
+                </div>
+                <div class="season-card" style="background: #8B1A1A;">
+                    <span class="sc-icon">⭐</span>
+                    <div class="sc-name">ጥምቀት (ጥር ሚካኤል)</div>
+                    <div class="sc-dates">ጥር 12 – ጥር 25</div>
+                </div>
+                <div class="season-card" style="background: #2E6B3E;">
+                    <span class="sc-icon">🌿</span>
+                    <div class="sc-name">ቅዱስ ጊዮርጊስ</div>
+                    <div class="sc-dates">ሚያዝያ 23</div>
+                </div>
+                <div class="season-card" style="background: #6B3280;">
+                    <span class="sc-icon">✝</span>
+                    <div class="sc-name">ሰኔ ሚካኤል</div>
+                    <div class="sc-dates">ሰኔ 12</div>
+                </div>
+                <div class="season-card" style="background: #B8942A;">
+                    <span class="sc-icon">🌅</span>
+                    <div class="sc-name">ታህሳስ አርሴማ</div>
+                    <div class="sc-dates">ታህሳስ 6</div>
+                </div>
+                <div class="season-card" style="background: #2E6B3E;">
+                    <span class="sc-icon">🌿</span>
+                    <div class="sc-name">መስከረም አርሴማ</div>
+                    <div class="sc-dates">መስከረም 29 – Nov 30</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ UPCOMING EVENTS ══ -->
+        <section id="events">
+            <div class="section-label">
+                <span class="icon">☩</span>
+                <h2>የሚመጡ በአላት</h2>
+                <div class="rule"></div>
+            </div>
+            <div class="events-list" id="eventsList">
+                <!-- Populated by app.js -->
+            </div>
+        </section>
+
+        <!-- ══ FOOTER ══ -->
+        <footer>
+            <strong>ዴንቨር ደብረ ሳህል ቅዱስ ሚካኤል ቤተ ክርስትያን</strong> 1556 Florence St. Aurora CO 80010<br> 📞 (555) 000-0000 &nbsp;·&nbsp;
+            <a href="mailto:office@stmichaelchurch.org">office@stmichaelchurch.org</a>
+            <br><br>
+            <span style="opacity:0.6">© <span id="footerYear"></span> ደብረ ሳህል ቅዱስ ሚካኤል. All rights reserved.</span>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
